@@ -276,12 +276,12 @@ function App() {
             </button>
           </div>
           
-          <div className="flex items-center space-x-1">
+        <div className="flex items-center space-x-1">
             <button
               type="button"
               onClick={handleRun}
               disabled={isRunning || isFixing}
-              className={`h-8 px-4 md:px-8 text-[10px] font-bold tracking-widest uppercase transition-all border cursor-pointer pointer-events-auto active:scale-95 rounded-none ${
+              className={`h-8 px-2 md:px-8 text-[10px] font-bold tracking-widest uppercase transition-all border cursor-pointer pointer-events-auto active:scale-95 rounded-none ${
                 status === 'RUNNING' ? 'bg-rams-blue text-white border-rams-blue' : 'bg-transparent border-black/10 dark:border-white/10 hover:bg-black/5 dark:hover:bg-white/5'
               } disabled:opacity-20 disabled:cursor-not-allowed`}
             >
@@ -290,7 +290,7 @@ function App() {
             <button
               type="button"
               onClick={handleFormat}
-              className="h-8 px-3 md:px-6 text-[10px] font-bold tracking-widest uppercase border border-black/10 dark:border-white/10 hover:bg-black/5 dark:hover:bg-white/5 transition-all cursor-pointer pointer-events-auto active:scale-95 rounded-none"
+              className="h-8 px-2 md:px-6 text-[10px] font-bold tracking-widest uppercase border border-black/10 dark:border-white/10 hover:bg-black/5 dark:hover:bg-white/5 transition-all cursor-pointer pointer-events-auto active:scale-95 rounded-none hidden sm:block"
             >
               FORMAT
             </button>
@@ -298,14 +298,14 @@ function App() {
               type="button"
               onClick={handleFix}
               disabled={isFixing || isRunning || !output}
-              className="h-8 px-3 md:px-6 text-[10px] font-bold tracking-widest uppercase border border-black/10 dark:border-white/10 hover:bg-black/5 dark:hover:bg-white/5 transition-all cursor-pointer pointer-events-auto active:scale-95 rounded-none disabled:opacity-10 disabled:cursor-not-allowed"
+              className="h-8 px-2 md:px-6 text-[10px] font-bold tracking-widest uppercase border border-black/10 dark:border-white/10 hover:bg-black/5 dark:hover:bg-white/5 transition-all cursor-pointer pointer-events-auto active:scale-95 rounded-none disabled:opacity-10 disabled:cursor-not-allowed hidden sm:block"
             >
               FIX
             </button>
             <button
               type="button"
               onClick={handleReset}
-              className="h-8 px-3 text-[10px] font-bold tracking-widest uppercase border border-black/10 dark:border-white/10 hover:bg-black/5 dark:hover:bg-white/5 transition-all cursor-pointer pointer-events-auto active:scale-95 rounded-none flex items-center gap-2"
+              className="h-8 px-2 text-[10px] font-bold tracking-widest uppercase border border-black/10 dark:border-white/10 hover:bg-black/5 dark:hover:bg-white/5 transition-all cursor-pointer pointer-events-auto active:scale-95 rounded-none flex items-center gap-2"
               title="Reset to default"
             >
               <RefreshCcw size={12} />
@@ -314,8 +314,8 @@ function App() {
           </div>
         </div>
 
-        <div className="flex items-center space-x-2 md:space-x-6">
-          <div className="flex items-center bg-black/5 dark:bg-white/5 px-2 h-8 border border-black/5 dark:border-white/5 rounded-none hidden md:flex">
+        <div className="flex items-center space-x-1 md:space-x-6">
+          <div className="flex items-center bg-black/5 dark:bg-white/5 px-2 h-8 border border-black/5 dark:border-white/5 rounded-none hidden lg:flex">
             <span className="text-[9px] font-bold tracking-widest uppercase opacity-30 mr-2">Mojo</span>
             <select 
               value={version}

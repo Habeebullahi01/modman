@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" fill="#121212" rx="4"/>
+  <text x="50%" y="55%" 
+        font-family="sans-serif" 
+        font-weight="900" 
+        font-size="10" 
+        fill="#637bff" 
+        text-anchor="middle" 
+        dominant-baseline="middle" 
+        font-style="italic"
+        letter-spacing="-0.5">
+    MOJO
+  </text>
+  <path d="M4 4 L8 4 L4 8 Z" fill="#637bff" opacity="0.5"/>
+  <path d="M28 28 L24 28 L28 24 Z" fill="#637bff" opacity="0.5"/>
+</svg>

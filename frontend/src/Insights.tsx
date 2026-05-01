@@ -143,7 +143,7 @@ export default function Insights() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         
         {/* DAILY ACTIVITY CHART */}
-        <div className="lg:col-span-2 bg-[#111] border border-white/5 p-8 relative overflow-hidden group">
+        <div className="lg:col-span-2 bg-[#111] border border-white/5 p-4 md:p-8 relative overflow-hidden group">
           <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
             <History size={120} />
           </div>
@@ -153,10 +153,10 @@ export default function Insights() {
               <BarChart3 className="text-rams-blue" size={18} />
               <h2 className="text-sm font-bold tracking-widest uppercase">System Activity // 7D</h2>
             </div>
-            <div className="text-[10px] opacity-40 uppercase tracking-widest">Total Events (Runs/Shares/Fixes)</div>
+            <div className="text-[10px] opacity-40 uppercase tracking-widest hidden sm:block">Total Events (Runs/Shares/Fixes)</div>
           </div>
 
-          <div className="h-64 flex items-end justify-between gap-2 md:gap-4 px-2">
+          <div className="h-64 flex items-end justify-between gap-1 md:gap-4 px-1 md:px-2">
             {data.daily_usage.length > 0 ? (
               data.daily_usage.map((day) => (
                 <div 
@@ -178,7 +178,7 @@ export default function Insights() {
                       }`}
                     />
                   </div>
-                  <span className="text-[8px] font-bold mt-4 opacity-30 group-hover/bar:opacity-100 transition-opacity whitespace-nowrap">
+                  <span className="text-[7px] md:text-[8px] font-bold mt-4 opacity-30 group-hover/bar:opacity-100 transition-opacity whitespace-nowrap">
                     {new Date(day.date).toLocaleDateString(undefined, { weekday: 'short' }).toUpperCase()}
                   </span>
                 </div>
@@ -192,13 +192,13 @@ export default function Insights() {
         </div>
 
         {/* RUN SUCCESS RATE */}
-        <div className="bg-[#111] border border-white/5 p-8 flex flex-col justify-center">
+        <div className="bg-[#111] border border-white/5 p-6 md:p-8 flex flex-col justify-center">
           <h2 className="text-sm font-bold tracking-widest uppercase mb-8 flex items-center gap-3">
             <Layout className="text-rams-blue" size={18} />
             Integrity Check
           </h2>
           
-          <div className="relative h-48 w-48 mx-auto mb-8">
+          <div className="relative h-40 w-40 md:h-48 md:w-48 mx-auto mb-8">
             <svg className="w-full h-full" viewBox="0 0 100 100">
               <circle 
                 cx="50" cy="50" r="45" 
@@ -217,7 +217,7 @@ export default function Insights() {
               />
             </svg>
             <div className="absolute inset-0 flex flex-col items-center justify-center">
-              <div className="text-4xl font-bold">
+              <div className="text-3xl md:text-4xl font-bold">
                 {Math.round((data.run_stats.success / (data.totals.runs || 1)) * 100)}%
               </div>
               <div className="text-[8px] font-bold tracking-widest opacity-40 uppercase">Success Rate</div>
@@ -243,7 +243,7 @@ export default function Insights() {
         </div>
 
         {/* DETAILED LESSON STATS */}
-        <div className="lg:col-span-3 bg-[#111] border border-white/5 p-8 mt-4">
+        <div className="lg:col-span-3 bg-[#111] border border-white/5 p-6 md:p-8 mt-4">
           <div className="flex items-center justify-between mb-8">
             <h2 className="text-sm font-bold tracking-widest uppercase flex items-center gap-3">
               <Cpu className="text-rams-blue" size={18} />
