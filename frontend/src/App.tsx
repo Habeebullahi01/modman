@@ -172,7 +172,7 @@ function App() {
     setIsRunning(true);
     setOutput('EXECUTING TASK...');
     try {
-      const res = await axios.post('/api/run', { 
+      const res = await axios.post('/run', { 
         code,
         lesson_id: activeItem.id 
       });
@@ -191,7 +191,7 @@ function App() {
     setStatus('FIXING');
     setIsFixing(true);
     try {
-      const res = await axios.post('/api/fix', { code, error: output });
+      const res = await axios.post('/fix', { code, error: output });
       if (res.data.fixed_code) {
         setCode(res.data.fixed_code);
         setOutput(prev => `${prev}\n\n[AGENT] SYSTEM REPAIR APPLIED`);
@@ -208,7 +208,7 @@ function App() {
   const handleShare = async () => {
     setIsSharing(true);
     try {
-      const res = await axios.post('/api/share', { code });
+      const res = await axios.post('/share', { code });
       const id = res.data.id;
       const url = `${window.location.origin}/p/${id}`;
       window.history.pushState({}, '', `/p/${id}`);

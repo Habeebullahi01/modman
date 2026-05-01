@@ -48,7 +48,7 @@ export default function Insights() {
   const [hoveredDay, setHoveredDay] = useState<string | null>(null);
 
   useEffect(() => {
-    axios.get('/api/insights')
+    axios.get('/insights')
       .then(res => setData(res.data))
       .catch(err => {
         console.error(err);
