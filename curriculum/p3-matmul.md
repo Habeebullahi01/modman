@@ -11,9 +11,15 @@ from std.python import Python
 
 def main() raises:
     var np = Python.import_module("numpy")
-    var A = np.array([[1, 2], [3, 4]])
-    var B = np.array([[5, 6], [7, 8]])
+    
+    # Use Python.evaluate for reliable nested list creation
+    var a_list = Python.evaluate("[[1, 2], [3, 4]]")
+    var b_list = Python.evaluate("[[5, 6], [7, 8]]")
+    
+    var A = np.array(a_list)
+    var B = np.array(b_list)
     var C = np.matmul(A, B)
-    print("Result:")
+    
+    print("Result Matrix:")
     print(C)
 ```
